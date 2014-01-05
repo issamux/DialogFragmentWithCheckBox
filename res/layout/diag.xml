@@ -4,29 +4,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/zeQuestion" />
+ 
 
     <CheckBox
-        android:id="@+id/checkBox1"
+        android:id="@+id/dotNet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Arabteam2000-forum" />
+        android:text="NET" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/j2ee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="StackoverFlow" />
+        android:text="J2EE" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/php"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xda-Developer" />
+        android:text="PHP" />
  
 
 </LinearLayout>

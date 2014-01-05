@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name="ResultActivity"></activity>
+        <activity android:name=".dummyactivities.PHP"></activity>
+        <activity android:name=".dummyactivities.DotNet"></activity>
+        <activity android:name=".dummyactivities.J2EE"></activity>
+        
     </application>
 
 </manifest>

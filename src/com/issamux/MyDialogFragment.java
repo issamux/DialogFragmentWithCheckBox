@@ -15,10 +15,14 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import com.issamux.dummyactivities.DotNet;
+import com.issamux.dummyactivities.J2EE;
+import com.issamux.dummyactivities.PHP;
+
 public class MyDialogFragment extends DialogFragment implements OnCheckedChangeListener {
 
 	private View mainView;
-	private CheckBox firstChoice, secondChoice, thirdChoice;
+	private CheckBox dotNetCheckBox, j2eeCheckBox, phpCheckBox;
 	private Context context;
 	Intent intent;
 
@@ -38,19 +42,18 @@ public class MyDialogFragment extends DialogFragment implements OnCheckedChangeL
 		mainView = inflater.inflate(R.layout.diag, container, false);
 		context = getActivity();
 		intent = new Intent();
-		intent.setClass(context, ResultActivity.class);
 		initUI();
 		return mainView;
 	}
 
 	private void initUI() {
-		firstChoice = (CheckBox) mainView.findViewById(R.id.checkBox1);
-		secondChoice = (CheckBox) mainView.findViewById(R.id.checkBox2);
-		thirdChoice = (CheckBox) mainView.findViewById(R.id.checkBox3);
+		dotNetCheckBox = (CheckBox) mainView.findViewById(R.id.dotNet);
+		j2eeCheckBox = (CheckBox) mainView.findViewById(R.id.j2ee);
+		phpCheckBox = (CheckBox) mainView.findViewById(R.id.php);
 
-		firstChoice.setOnCheckedChangeListener(this);
-		secondChoice.setOnCheckedChangeListener(this);
-		thirdChoice.setOnCheckedChangeListener(this);
+		dotNetCheckBox.setOnCheckedChangeListener(this);
+		j2eeCheckBox.setOnCheckedChangeListener(this);
+		phpCheckBox.setOnCheckedChangeListener(this);
 
 	}
 
@@ -60,14 +63,19 @@ public class MyDialogFragment extends DialogFragment implements OnCheckedChangeL
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-		if (isChecked) {
-			doJob(buttonView.getText().toString());
+		if (buttonView.getId() == dotNetCheckBox.getId() && isChecked) {
+			intent.setClass(context, DotNet.class);
+		}
+		else if (buttonView.getId() == phpCheckBox.getId() && isChecked) {
+			intent.setClass(context, PHP.class);
+		}
+		else if (buttonView.getId() == j2eeCheckBox.getId() && isChecked) {
+			intent.setClass(context, J2EE.class);
+
 		}
 
+		startActivity(intent);
+
 	}
 
-	private void doJob(String choiceValue) {
-		intent.putExtra(ResultActivity.EXTRA_KEY, choiceValue);
-		startActivity(intent);
-	}
 }

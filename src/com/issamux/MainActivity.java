@@ -40,10 +40,11 @@ public class MainActivity extends FragmentActivity {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		mDialog = (MyDialogFragment) getSupportFragmentManager().findFragmentByTag("dialog");
 		if (mDialog != null) {
+			mDialog.dismiss();
 			ft.remove(mDialog);
 		}
 		ft.addToBackStack(null);
-		ft.commit();
+		// ft.commit();
 
 	}
 
