@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AlertWithCheckBoxActivity!</string>
+    <string name="app_name">AlertWithCheckBox</string>
+    <string name="zeQuestion">ما هو أفضل موقع تستعمله لإيجاد حلول  للمشاكل التي تواجهك في برمجة الأندرويد ؟</string>
+<string name="zeResponse"> أفضل موقع تستعمله لإيجاد حلول  للمشاكل التي تواجهك في برمجة الأندرويد هو : </string>
+</resources>
